@@ -82,6 +82,12 @@
 	$("body").delegate(".testclick","click",function(){
 		fileOpener.open("file:///sdcard/teach2/C21_test.mp4");
 	});	
+	$("body").delegate(".testclick2","click",function(){
+		fileOpener.open("file:///storage/E8D7-9E71/C21_test.mp4");
+	});	
+	$("body").delegate(".testclick3","click",function(){
+		fileOpener.open("file:///storage/E8D7-9E71/Android/data/com.maorongexam.app/files/C21_test.mp4");
+	});	
 	//首頁內換頁
 	$("body").delegate(".pageclick","click",function(){
 		var mpage=$(this).data("page");
