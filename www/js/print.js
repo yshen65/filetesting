@@ -7,13 +7,13 @@
 		out+="        <div class='fullscrollitemtext_1'>";
 		out+="            <img src='img/learn_3.png' id='indeximg1'>";
 		out+="        </div>";
-		out+=" 		<div class='fullscrollitemtext' style='font-size: 56px; line-height:70px;text-align: center; color: #33462c; top: 423px;'>";
+		out+=" 			<div class='fullscrollitemtext' style='font-size: 56px; line-height:70px;text-align: center; color: #33462c; top: 423px;'>";
 		out+="			<b>國中雲端學院</b>";
 		out+="        </div> ";
-		out+=" 		<div class='fullscrollitemtext' style='font-size:24px;line-height:30px;text-align:center;color:#323232;top:508px;'>";
+		out+=" 			<div class='fullscrollitemtext' style='font-size:24px;line-height:30px;text-align:center;color:#323232;top:508px;'>";
 		out+="            <b>我們的使命 ─ 讓學生放心去玩</b>";
 		out+="        </div> ";
-		out+=" 		<div class='fullscrollitemtext' style='font-size:13px;text-align:center;color:#323232;top:551px;line-height:20px'>";
+		out+=" 			<div class='fullscrollitemtext' style='font-size:13px;text-align:center;color:#323232;top:551px;line-height:20px;z-index:4;'>";
 		out+="            <p><b>我們傳授學生「終生有效」的學習方法！</b></p>";
 		out+="            <p><b>讓學生在最短時間做好課業，</b></p>";
 		out+="            <p><b>讓學生擁有更多時間，盡情去享受青春！</b></p>";
@@ -24,7 +24,7 @@
 		out+="        <img src='img/table_1.png' style='position:absolute;bottom:0;left:0;'>";
 		out+="        <img src='img/book_left.png' style='position:absolute;bottom:0;left:0;' id='indeximg2'>";
 		out+="        <img src='img/book_right.png' style='position:absolute;bottom:0;right:0;' id='indeximg3'>";
-		out+="        <div class='fullscrollitemtext' style='top:650px;font-size:11px;line-height:16px;text-align:center;color:#000;'>";
+		out+="        <div class='fullscrollitemtext' style='top:650px;font-size:11px;line-height:16px;text-align:center;color:#000;z-index:2;'>";
 		out+="			<p>茂榕數位科技 版權所有 </p>";
 		out+="			<p>2016© Maorongtech  All Rights Reserved.</p>";
 		out+="		  </div> ";
