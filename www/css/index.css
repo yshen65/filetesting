@@ -14,9 +14,9 @@ html, body{min-width:400px;background:#f9f8ee;}
 .centerwarp3{position:absolute;width:1280px;height:490px;top:210px;left:0;overflow: auto;;}
 .centerwarp4{position:absolute;width:1280px;height:490px;top:150px;left:0;overflow: hidden;padding-left:30px;mgrin:0 0}
 
-.centerwarp1_box01{position:absolute;width:515px;line-height:49px;text-align:center;top:13px;left:380px;font-size:46px;}
-.centerwarp1_box02{position:absolute;width:515px;line-height:35px;text-align:left;top:69px;left:380px;font-size:12px;}
-.centerwarp1_box03{position:absolute;width:515px;line-height:35px;text-align:left;top:101px;left:380px;font-size:12px;}
+.centerwarp1_box01{position:absolute;width:515px;line-height:49px;text-align:center;top:13px;left:380px;font-size:42px;}
+.centerwarp1_box02{position:absolute;width:520px;line-height:35px;text-align:left;top:64px;left:380px;font-size:12px;}
+.centerwarp1_box03{position:absolute;width:520px;line-height:35px;text-align:left;top:98px;left:380px;font-size:12px;}
 .centerwarp1_home{position:absolute;width:68px;height:80px;top:0px;right:30px;}
 .centerwarp1_tag{position:absolute;width:153px;height:47px;top:145px;right:458px;}
 
