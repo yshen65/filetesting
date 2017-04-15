@@ -101,7 +101,7 @@
 		out+="				<font color='#020202'><b>考前最終圖庫新上線！立即來做最後的衝刺吧。</b></font>";
 		out+="          </div>";
 		out+="          <div class='centerwarp1_home pageclick' data-page='0' ></div>";
-		out+="          <div class='centerwarp1_tag' ></div>";
+		out+="          <a href='https://www.sites.google.com/site/maorongexam/' class='page3link' target='_new'><div class='centerwarp1_tag' ></div></a>";
 		out+="     </div>";
 		out+="     <div class='centerwarp3' style='z-index:1'>";
 		out+="			<div class='books_4'>";
