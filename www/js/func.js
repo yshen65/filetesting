@@ -79,7 +79,9 @@
 	$(window).scroll(function (event) {
 	});
 	//互動
-	
+	$("body").delegate(".testclick","click",function(){
+		fileOpener.open("file:///sdcard/teach2/C21_test.mp4");
+	});	
 	//首頁內換頁
 	$("body").delegate(".pageclick","click",function(){
 		var mpage=$(this).data("page");
@@ -180,7 +182,7 @@
 		}else{
 			var classlist=$(xmlsave).find('cyear[id='+z+']').children("class");
 			for(var a=0;a<classlist.length;a++){
-				out+="		<div  class='classclick' data-val='"+classlist.eq(a).children("code").text()+"'>";
+				out+="		<div  class='classclick' data-val='"+classlist.eq(a).children("code").text()+"'  data-folder='"+classlist.eq(a).parents("classtype").children("name").text()+"'>";
           		out+="			<font color='#ffffff' ><p>"+classlist.eq(a).children("name").text()+"</p></font>";
 				out+="			<div class='line'></div>";
 				out+="		</div>";
