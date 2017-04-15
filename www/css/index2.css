@@ -1,0 +1,55 @@
+@charset "utf-8";
+#footer{position:fixed;bottom:0;left:0;width:100%;background:url(../img/b70.png);border-top:1px solid #888;}
+#footerin{padding:5px 20px;font-size:12px;color:#fff;line-height:24px;}
+#footerin span{display:inline-block;margin:0 10px;}
+.arrl{position:absolute;bottom:10%;left:3%;max-width:8%;z-index:99;cursor:pointer;}
+.arrr{position:absolute;bottom:10%;right:3%;max-width:8%;z-index:99;cursor:pointer;}
+.casebox{position:relative;width:230px;max-width:47.2%;margin:0.8% 1%;overflow:hidden;float:left;border:1px solid #777;}
+.casebox:hover{border:1px solid #ccc;}
+.casebox img{width:100%;}
+.casebox .casedes{position:absolute;bottom:0px;;left:0;width:100%;background:url(../img/b70.png);height:48px;display:none;z-index:5;    -moz-box-shadow: 0px 0px 6px #000;-webkit-box-shadow: 0px 0px 6px #000;	box-shadow: 0px 0px 6px #000;	}
+.casebox h1{font-size:15px;line-height:24px;color:#fff;width:90%;padding:0 5%;margin-bottom:4px;background:#f3982a;}
+.casebox p{font-size:14px;line-height:20px;color:#fff;width:90%;padding:0 5%;}
+.casebox p .hovertext{color:#fff;position:relative;display:inline-block;margin-right:5px;font-size:12px;line-height:16px;cursor:pointer;}
+.casebox p .hovertext i{margin:0 3px;}
+.casebox a{display:block;margin:0!important;padding:0!important;}
+.casebox a img{display:block;margin:0!important;padding:0!important;}
+.casebox p a.hovertext span{display:none;}
+.casebox p a.hovertext:hover span{display:block;position:absolute;top:-16px;left:0px;padding:0 3px;;width:30px;height:16px;font-size:12px;line-height:16px;background:url(../img/w70.png);color:#000;}
+/*特殊頁壓 */
+.movetitles{font-size:40px!important;line-height:60px!important;text-shadow:2px 2px 0.7vw rgba(0,0,0,0.4);}
+.cutcontents{margin-left:250px!important;}
+.cutcontents .casebox{width:200px;}
+.cutcontents .tagfarm{padding:10px 10px;margin-top:0px;-webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;border:1px solid #ccc;}
+/* qa */
+.qabox{padding:15px 10px;border:1px solid #9ac4e7;margin:15px 0;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
+.qaq{font-size:18px;line-height:30px;color:#446bb3;cursor:pointer;}
+.qabox:hover{background:#fff;}
+.qabox.on{background:#fff!important;}
+
+.qaq i{margin-right:10px;}
+.qaa{display:none;color:#446bb3;margin-top:10px;font-size:14px;line-height:20px;}
+/* 1000 以下顯示  平板版本--影片改圖騙    */
+@media screen and (max-width: 1000px) {
+
+}
+/* 960 以下改手機板  */
+@media screen and (max-width: 959px) {
+	.cutcontents{position:relative;padding-top:220px;margin:0px 30px!important;text-align:left;margin-bottom:50px;}
+	#footer{position:relative;width:100%;}
+	#footerin{padding:20px 20px;font-size:15px;color:#fff;line-height:24px;}
+}
+@media screen and (max-width: 800px) {
+
+}
+@media screen and (max-width: 700px) {
+}
+@media screen and (max-width: 600px) {
+	.cutcontent{position:relative;padding-top:210px;margin:0px 25px 50px 15px!important;;text-align:left;}
+
+}
+@media screen and (max-width: 500px) {
+}
+/* 450以下  固定 400  顯示手機板 -- iphone 6 plus 414/ iphone6 375 iphone 320    */
+@media screen and (max-width: 450px) {
+}

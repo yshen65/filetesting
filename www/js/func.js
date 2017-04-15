@@ -11,7 +11,7 @@
 	//如果進入index
 	var querystring = location.search.replace( '?', '' ).split( '&' );
 	var qs = {};
-	var fileURL="";
+	var fileURL="";//SD根目錄
 	for ( var i=0; i<querystring.length; i++ ) {
 		  var name = querystring[i].split('=')[0];
 		  var value = querystring[i].split('=')[1];
@@ -22,7 +22,15 @@
 	}
 	if(qs['val']){
 		mval=qs['val'];
-	}	
+	}
+	$(window).bind("popstate", function(e){
+		var state =event.state;
+		if(state){
+			mpage=state.page;
+			mval=state.mval;
+			showpage(mpage,mval);
+		}
+	});	
 	var url=window.location.toString();
 	page=url.substring(url.lastIndexOf('/') + 1).split("?")[0];
 	$.when(
@@ -36,18 +44,23 @@
 		if(isapp){
 			document.addEventListener("deviceready", onDeviceReady, false);
 			function onDeviceReady() {
-				window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory,onFileSystemSuccess, onError);
-				
-				window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, geturl, function(){//去geturl
-																						 //暫時不幹嘛
-				});
-				var me=ajaxxml();
-				me.success(function(xml){
-					xmlsave=xml;
-					//進入
-					showpage(mpage,mval);
-				});
+				cordova.plugins.diagnostic.getExternalSdCardDetails(function(details){
+					details.forEach(function(detail){
+						if(detail.canWrite && detail.freeSpace > 100000){
+								temp = detail.filePath;
+								ta=temp.split("storage/");
+								tb=ta[1].split("/");
+								fileURL="/storage/"+tb[0]+"/";//SD根目錄
+								var me=ajaxxml();
+								me.success(function(xml){
+									xmlsave=xml;
+									//進入
+									showpage(mpage,mval);
+								});
+							}
+					});
+				}, function(error){});
+
 			}
 		}else{
 			var me=ajaxxml();
@@ -66,6 +79,7 @@
 	$(window).scroll(function (event) {
 	});
 	//互動
+	
 	//首頁內換頁
 	$("body").delegate(".pageclick","click",function(){
 		var mpage=$(this).data("page");
@@ -77,21 +91,19 @@
 		history.pushState({page:mpage}, '', "?page="+mpage+"&val="+mval);//history
 		showpage(mpage,mval);
 	});
-
+	//顯示影片
+	$("body").delegate(".classclick","click",function(){
+		var murl=fileURL+$(this).data("folder")+"/"+$(this).data("val")+".mp4";
+		try{
+			 fileOpener.open(murl);
+		 } catch(err) {
+			 alert("ER - " + err.message);
+		 }
+	});
 	function setsize(){
 	}
 	//定義一些動態
 	var rcloud="";
-	function geturl(fileSystem){
-		fileURL= fileSystem.root.toURL();
-		//alert(fileURL)
-	}
-	function onError(e) {
-		alert("onError");
-	};
-	function onFileSystemSuccess(fileSystem) {
-		alert(fileSystem.toURL());
-	};
 	function showpage(x,y){
 		var mypage=parseInt(x);
 		var myval=y;
@@ -123,7 +135,7 @@
 			var temp=print_menu();
 			$("#outerwrap").html(temp);	
 			if(tb=getxmlmenu()){
-				$(".inwrap").html(tb);	
+				$(".page1insert").html(tb);	
 				$("#outerwrap").animate({"opacity":1},300);
 			}
 		}
@@ -132,7 +144,7 @@
 			var temp=print_bookselve();
 			$("#outerwrap").html(temp);	
 			if(tb=getxmlselve(myval)){
-				$(".inwrap").html(tb);	
+				$(".centerwarp2").html(tb);	
 				$("#outerwrap").animate({"opacity":1},300);
 			}
 		}
@@ -141,24 +153,55 @@
 			var temp=print_booklist();
 			$("#outerwrap").html(temp);	
 			if(tb=getxmllist(myval)){
-				$(".inwrap").html(tb);	
+				$(".classcbox").html(tb);	
 				$("#outerwrap").animate({"opacity":1},300);
 			}
 		}
 	}
 	function getxmllist(z){
 		var out="";
-		var classlist=$(xmlsave).find('cyear[id='+z+']').children("class");
-		for(var a=0;a<classlist.length;a++){
-			out+="<div style='height:50px;text-align:center;color:#000;font-size:20px;line-height:40px;' class='classclick' data-val='"+classlist.eq(a).children("code").text()+"'>"+classlist.eq(a).children("name").text()+"</div>";
+		$(".page3title").html($(xmlsave).find('cyear[id='+z+']').siblings("name").text()+"教室");
+		$(".page3title").data("val",$(xmlsave).find('cyear[id='+z+']').parents("classtype").attr("id"));
+		out+="<div style='font-size:34px;'> <font color='#d5c13f'>"+$(xmlsave).find('cyear[id='+z+']').children("name").text()+"</font></div>";
+		out+="<div style='font-size:23px;line-height:53px;font-weight: bold' class='page4content'>";
+		var sublist=$(xmlsave).find('cyear[id='+z+']').children("subtype");
+		if(sublist.length>0){
+			for(var b=0;b<sublist.length;b++){
+				out+="			<font color='#d5c13f' ><p>"+sublist.eq(b).children("name").text()+"</p></font>";
+				out+="			<div class='line'></div>";			
+				var classlist=sublist.eq(b).children("class");
+				for(var a=0;a<classlist.length;a++){
+					out+="		<div  class='classclick' data-val='"+classlist.eq(a).children("code").text()+"' data-folder='"+classlist.eq(a).parents("classtype").children("name").text()+"'>";
+					out+="			<font color='#ffffff' ><p>"+classlist.eq(a).children("name").text()+"</p></font>";
+					out+="			<div class='line'></div>";
+					out+="		</div>";
+				}
+			}
+		}else{
+			var classlist=$(xmlsave).find('cyear[id='+z+']').children("class");
+			for(var a=0;a<classlist.length;a++){
+				out+="		<div  class='classclick' data-val='"+classlist.eq(a).children("code").text()+"'>";
+          		out+="			<font color='#ffffff' ><p>"+classlist.eq(a).children("name").text()+"</p></font>";
+				out+="			<div class='line'></div>";
+				out+="		</div>";
+			}
 		}
+		out+="</div>";
 		return out;
 	}
 	function getxmlselve(z){
 		var out="";
 		var classyear=$(xmlsave).find('classtype[id='+z+']').children("cyear");
-		for(var a=0;a<classyear.length;a++){
-			out+="<div style='width:100px;height:200px;float:left;color:#000;' class='pageclick' data-page='3' data-val='"+classyear.eq(a).attr("id")+"'>"+classyear.eq(a).children('name').text()+"</div>";
+		$(".page2title").html($(xmlsave).find('classtype[id='+z+']').children("name").text()+"書架");
+		var xpg=Math.ceil(classyear.length/5);
+		for(p=0;p<xpg;p++){
+			out+="<div class='cutcontent2'>";
+			out+="<div class='books_1'>";
+			for(var a=p*5;a<p*5+5 && a<classyear.length;a++){
+				out+="<img src='"+classyear.eq(a).children('cimg').text()+"' class='pageclick' data-page='3' data-val='"+classyear.eq(a).attr("id")+"'>";
+			}
+			out+="</div>";
+			out+="</div>";
 		}
 		return out;
 	}
@@ -166,7 +209,7 @@
 		var out="";
 		var classtype=$(xmlsave).find('classtype');
 		for(var a=0;a<classtype.length;a++){
-			out+="<div style='width:100px;height:200px;float:left;color:#000;' class='pageclick' data-page='2' data-val='"+classtype.eq(a).attr("id")+"'>"+classtype.eq(a).children('name').text()+"</div>";
+			out+="<img src='"+classtype.eq(a).children('cimg').text()+"' class='pageclick' data-page='2' data-val='"+classtype.eq(a).attr("id")+"' />";
 		}
 		return out;
 	}

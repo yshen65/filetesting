@@ -1,14 +1,11 @@
 @charset "utf-8";
 /* set default */
-html {-webkit-text-size-adjust:none}
 *,body {margin:0 auto;padding:0;}
 body, table, p, div, span, form, input, textarea, select, pre, button,h1,h2,h3,h4 ,a,ul li,ol li,table th,table td{ font-family: "微軟正黑體","Microsoft JhengHei", "PMingLiU", AppleGothic, Dotum, Lucida Grande, Verdana Sans-serif !important; }
-
-div, p, span, ul, ol, li, h1, h2, h3, h4, h5, h6, input, img { margin: 0; padding: 0;border: none; word-wrap: break-word;}
+div, p, span, ul, ol, li, h1, h2, h3, h4, h5, h6, input, table, td, th, img { margin: 0; padding: 0;border: none; }
 a {color:#666;	text-decoration:none;	outline: none;}
 html, body, p, h1, h2, h3, h4, h5, h6, ul, ol, dl, br, span {margin:0;padding:0;}
 img {border:none;}
-textarea:focus, input:focus{    outline: 0;}
 /* placement */
 .hideme{display:none;}
 /*測試用 */
@@ -16,7 +13,7 @@ textarea:focus, input:focus{    outline: 0;}
 	border:1px solid #000;
 }
 /* mover 會需要移動, fixer 不移動 */
-.clr {	clear: both!important;float:none!important;}	/*清理者*/
+.clr {	clear: both;}	/*清理者*/
 .tcenter {text-align: center!important;}	/*文字置中 */
 .tright {text-align:right!important;}
 .tleft {text-align:left!important;}
@@ -31,12 +28,11 @@ blockquote, q {	quotes: none;}
 blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
 table {	border-collapse: collapse;border-spacing: 0;}
 /*共用物件 */
-.fader{	display:none;}
+.fader{	display:none!important;}
 .fixer{	position:absolute!important;}
 .mover{	position:absolute!important;}
 .stay{position:fixed!important;}
 .rely{position:relative!important;}
-.inblock{position:relative;display:inline-block!important;}
 .shadow{
     -moz-box-shadow: 1px 1px 16px #000;
 	-webkit-box-shadow: 1px 1px 16px #000;
@@ -59,42 +55,22 @@ table {	border-collapse: collapse;border-spacing: 0;}
 	width:100%;
 	height:100%;
 }
-/* border */
-.setborder1{
-	border:1px solid #ccc!important;
-}
-
-.border5{
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-}
-.border10{
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-}
-.border15{
--webkit-border-radius: 15px;
--moz-border-radius: 15px;
-border-radius: 15px;
-}
-.border20{
--webkit-border-radius: 20px;
--moz-border-radius: 20px;
-border-radius: 20px;
-}
-/* PADDING */
-.pad10{padding:10px;}
-
 /* 全寬 */
 .fullw{	width:100%;}
 .fullh{height:100%;}
 /* margin */
 .marginv5{ margin-top:5px;margin-bottom:5px;}
 .marginv10{ margin-top:10px;margin-bottom:10px;}
-.maright5{margin-right:5px;}
 
+/*padding */
+.p10{padding-top:10px;padding-bottom:10px;}
+.p15{padding-top:15px;padding-bottom:15px;}
+.p20{padding-top:20px;padding-bottom:20px;}
+.wp10{padding-left:10px;padding-right:10px;}
+.wp15{padding-left:15px;padding-right:15px;}
+.wp20{padding-left:20px;padding-right:20px;}
+.wp25{padding-left:25px;padding-right:25px;}
+.wp30{padding-left:30px;padding-right:30px;}
 /* inline=block */
 .inblock{ display:inline-block !important;}
 /* preload 框架  */
@@ -106,6 +82,11 @@ border-radius: 20px;
 	height:100%;
 	z-index:999999999999999999999;
 }
+.border5{-webkit-border-radius: 5px!important;-moz-border-radius: 5px!important;border-radius: 5px!important;}
+.border10{-webkit-border-radius: 10px!important;-moz-border-radius: 10px!important;border-radius: 10px!important;}
+.border15{-webkit-border-radius: 15px!important;-moz-border-radius: 15px!important;border-radius: 15px!important;}
+.border20{-webkit-border-radius: 20px!important;-moz-border-radius: 20px!important;border-radius: 20px!important;}
+.bold{font-weight:bold!important;}
 /*驗證碼使用 */
 #codepage{
 	position:relative;
@@ -124,7 +105,7 @@ border-radius: 20px;
 	height:30px;
 	width:150px;
 	background:#fff;
-	margin:0px 10px;
+	margin:1px 10px;
 	float:left;
 	background:url(../capw/bg.jpg);
 }#codepagew img {
@@ -143,24 +124,5 @@ border-radius: 20px;
 	padding-left:5px!important;
 }
 .forminput{
-	background:#ffcccc !important;
-}
-@media screen and (max-width: 979px) {
-	#codepagew{
-		position:relative;
-		height:6vw;
-		width:100%;
-		background:#fff;
-		margin:0;
-		float:left;
-		background:url(../capw/bg.jpg);
-		overflow:hidden;
-	}#codepagew img {
-		position:relative;
-		float:left;
-		height:86%;
-		max-height:100%;
-		padding:0;
-		margin:1.5% 1px;
-	}
+	background:#446bb3 !important;
 }
