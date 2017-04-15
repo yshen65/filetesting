@@ -102,6 +102,7 @@
 	//顯示影片
 	$("body").delegate(".classclick","click",function(){
 		var murl=fileURL+$(this).data("folder")+"/"+$(this).data("val")+".mp4";
+		alert(murl)
 		try{
 			 fileOpener.open(murl);
 		 } catch(err) {
