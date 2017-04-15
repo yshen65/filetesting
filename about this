@@ -1,0 +1,18 @@
+
+# if you need to find sd card location 
+cordova-diagnostic-plugin is the answer
+https://github.com/dpa99c/cordova-diagnostic-plugin
+however the sample code has an bug in it...
+correct sample as follow:
+	cordova.plugins.diagnostic.getExternalSdCardDetails(function(details){
+		details.forEach(function(detail){
+			if(detail.canWrite && detail.freeSpace > 100000){
+				cordova.file.externalSdCardDirectory = detail.filePath;
+				alert(cordova.file.externalSdCardDirectory)//this is it.
+        // Then: write file to external SD card
+			}
+		});
+	}, function(error){
+		console.error(error);
+	});
+	

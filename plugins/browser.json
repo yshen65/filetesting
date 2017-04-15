@@ -1,0 +1,97 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "phonegap-plugin-mobile-accessibility": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "tw.why3s.medmission.cloud"
+        },
+        "cordova-plugin-barcodescanner": {
+            "PACKAGE_NAME": "tw.why3s.medmission.cloud"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.maorongexam.app"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.maorongexam.app"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.maorongexam.app"
+        },
+        "cordova-plugin-file-opener2": {
+            "PACKAGE_NAME": "com.maorongexam.app"
+        },
+        "cordova.plugins.diagnostic": {
+            "PACKAGE_NAME": "com.maorongexam.app"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.maorongexam.app"
+        },
+        "com.wmjalak.cordova.fileopener": {
+            "PACKAGE_NAME": "com.maorongexam.app"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "tw.why3s.99mission.cloud"
+        }
+    }
+}
