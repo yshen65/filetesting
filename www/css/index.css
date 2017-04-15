@@ -10,11 +10,9 @@ html, body{min-width:400px;background:#f9f8ee;}
 
 /*共用*/
 .cutwrap,.fullcutwrap{position:relative;width:100%;overflow: auto;}
-.centerwarp{position:absolute;width:1280px;height:740px;}
-.centerwarp1{position:absolute;width:1280px;height:146px;overflow: auto;}
-.centerwarp2{position:absolute;width:1280px;height:540px;overflow: auto;}
-.centerwarp3{position:absolute;width:1280px;height:490px;overflow: auto;;}
-.centerwarp4{position:absolute;width:1280px;height:490px;overflow: hidden;padding-left:30px;mgrin:0 0}
+.centerwarp2{position:absolute;width:1280px;height:540px;top:150px;left:0;overflow: auto;}
+.centerwarp3{position:absolute;width:1280px;height:490px;top:210px;left:0;overflow: auto;;}
+.centerwarp4{position:absolute;width:1280px;height:490px;top:150px;left:0;overflow: hidden;padding-left:30px;mgrin:0 0}
 
 .centerwarp1_box01{position:absolute;width:497px;line-height:49px;text-align:center;top:13px;left:388px;font-size:46px;}
 .centerwarp1_box02{position:absolute;width:497px;line-height:35px;text-align:left;top:69px;left:388px;font-size:12px;}
