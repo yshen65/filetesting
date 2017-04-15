@@ -101,8 +101,7 @@
 	});
 	//顯示影片
 	$("body").delegate(".classclick","click",function(){
-		var murl=fileURL+$(this).data("folder")+"/"+$(this).data("val")+".mp4";
-		alert(murl)
+		var murl="file://"+fileURL+$(this).data("folder")+"/"+$(this).data("val")+".mp4";
 		try{
 			 fileOpener.open(murl);
 		 } catch(err) {
