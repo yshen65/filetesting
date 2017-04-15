@@ -17,9 +17,9 @@
 		out+="            <p><b>我們傳授學生「終生有效」的學習方法！</b></p>";
 		out+="            <p><b>讓學生在最短時間做好課業，</b></p>";
 		out+="            <p><b>讓學生擁有更多時間，盡情去享受青春！</b></p>";
-		out+="            <p class='testclick' style='background:#fff;z-index:5'>測試開LOCAL一般影片</p>";
-		out+="            <p class='testclick2' style='background:#fff;z-index:5'>測試開SD一般影片</p>";
-		out+="            <p class='testclick2' style='background:#fff;z-index:5'>測試開app內一般影片</p>";
+		//out+="            <p class='testclick' style='background:#fff;z-index:5'>測試開LOCAL一般影片</p>";
+		//out+="            <p class='testclick2' style='background:#fff;z-index:5'>測試開SD一般影片</p>";
+		//out+="            <p class='testclick2' style='background:#fff;z-index:5'>測試開app內一般影片</p>";
 		out+="        </div>     ";
 		out+="        <img src='img/table_1.png' style='position:absolute;bottom:0;left:0;'>";
 		out+="        <img src='img/book_left.png' style='position:absolute;bottom:0;left:0;' id='indeximg2'>";
