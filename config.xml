@@ -1,25 +1,26 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.maorongexam.app" version="1.01.84" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.maorongexam.app" version="1.01.85" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>雲端學院</name>
     <description>我們的使命-讓學生放心去玩</description>
-    <author email="yuan.shen65@gmail.com" href="https://www.sites.google.com/site/maorongexam/"></author>
+    <author email="yuan.shen65@gmail.com" href="https://www.sites.google.com/site/maorongexam/" />
     <icon density="mdpi" height="57" platform="ios" src="icon.png" width="57" />
     <icon density="mdpi" height="57" platform="android" src="icon.png" width="57" />
     <content src="index.html" />
-	   <preference name="AndroidPersistentFileLocation" value="Compatibility" />
-     <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,assets,root" />
-	    <preference name="orientation" value="landscape" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,assets,root" />
+    <preference name="orientation" value="landscape" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="17" />
-	   <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
     <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-file" source="npm" spec="~4.1.1" />
     <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.5.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-	   <plugin name="cordova-plugin-file-opener2" source="npm" spec="~2.0.13" />
-     <plugin name="cordova-plugin-file-opener" source="npm" />
-	   <plugin name="cordova.plugins.diagnostic" source="npm" />
-	  <plugin name="cordova-plugin-android-permissions" source="npm" />
+    <plugin name="cordova-plugin-file-opener2" source="npm" spec="~2.0.13" />
+    <plugin name="cordova-plugin-file-opener" source="npm" />
+    <plugin name="cordova.plugins.diagnostic" source="npm" />
+    <plugin name="cordova-plugin-android-permissions" source="npm" />
+    <plugin name="cordova-plugin-fileopener" spec="~1.0.5" />
     <preference name="StatusBarBackgroundColor" value="#444444" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <icon src="icon.png" />
@@ -71,7 +72,7 @@
         <splash height="960" platform="ios" src="www/res/screen/ios/Default@2x~iphone.png" width="640" />
         <splash height="480" platform="ios" src="www/res/screen/ios/Default~iphone.png" width="320" />
     </platform>
-	<access origin="" subdomains="true" />
+    <access origin="" subdomains="true" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -89,4 +90,5 @@
     </platform>
     <engine name="android" spec="~6.1.1" />
     <engine name="ios" spec="~4.1.1" />
+
 </widget>

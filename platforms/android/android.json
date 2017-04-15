@@ -99,6 +99,10 @@
                         {
                             "xml": "<feature name=\"FileOpener\"><param name=\"android-package\" value=\"com.wmjalak.cordova.fileopener.FileOpener\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FileOpener\"><param name=\"android-package\" value=\"fr.smile.cordova.fileopener.FileOpener\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -108,7 +112,7 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 5
+                            "count": 6
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.READ_CONTACTS\" />",
@@ -807,6 +811,9 @@
         },
         "com.wmjalak.cordova.fileopener": {
             "PACKAGE_NAME": "com.maorongexam.app"
+        },
+        "cordova-plugin-fileopener": {
+            "PACKAGE_NAME": "com.maorongexam.app"
         }
     },
     "dependent_plugins": {},
@@ -1319,6 +1326,13 @@
             "clobbers": [
                 "fileOpener"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-fileopener/www/FileOpener.js",
+            "id": "cordova-plugin-fileopener.FileOpener",
+            "clobbers": [
+                "cordova.plugins.FileOpener"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -1349,6 +1363,7 @@
         "cordova-plugin-file-opener2": "2.0.13",
         "cordova.plugins.diagnostic": "3.5.0",
         "cordova-plugin-android-permissions": "0.11.0",
-        "com.wmjalak.cordova.fileopener": "1.0.0"
+        "com.wmjalak.cordova.fileopener": "1.0.0",
+        "cordova-plugin-fileopener": "1.0.5"
     }
 }

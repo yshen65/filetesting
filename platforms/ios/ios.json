@@ -271,6 +271,9 @@
         },
         "com.wmjalak.cordova.fileopener": {
             "PACKAGE_NAME": "tw.why3s.medmission.cloud"
+        },
+        "cordova-plugin-fileopener": {
+            "PACKAGE_NAME": "tw.why3s.medmission.cloud"
         }
     },
     "dependent_plugins": {},
@@ -882,6 +885,14 @@
             "clobbers": [
                 "fileOpener"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-fileopener/www/FileOpener.js",
+            "id": "cordova-plugin-fileopener.FileOpener",
+            "pluginId": "cordova-plugin-fileopener",
+            "clobbers": [
+                "cordova.plugins.FileOpener"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -911,6 +922,7 @@
         "cordova-plugin-file-opener2": "2.0.13",
         "cordova.plugins.diagnostic": "3.5.0",
         "cordova-plugin-android-permissions": "0.11.0",
-        "com.wmjalak.cordova.fileopener": "1.0.0"
+        "com.wmjalak.cordova.fileopener": "1.0.0",
+        "cordova-plugin-fileopener": "1.0.5"
     }
 }

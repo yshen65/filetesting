@@ -656,6 +656,14 @@ module.exports = [
         "clobbers": [
             "fileOpener"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-fileopener/www/FileOpener.js",
+        "id": "cordova-plugin-fileopener.FileOpener",
+        "pluginId": "cordova-plugin-fileopener",
+        "clobbers": [
+            "cordova.plugins.FileOpener"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -688,7 +696,8 @@ module.exports.metadata =
     "cordova-plugin-file-opener2": "2.0.13",
     "cordova.plugins.diagnostic": "3.5.0",
     "cordova-plugin-android-permissions": "0.11.0",
-    "com.wmjalak.cordova.fileopener": "1.0.0"
+    "com.wmjalak.cordova.fileopener": "1.0.0",
+    "cordova-plugin-fileopener": "1.0.5"
 }
 // BOTTOM OF METADATA
 });

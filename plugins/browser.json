@@ -87,6 +87,9 @@
         },
         "com.wmjalak.cordova.fileopener": {
             "PACKAGE_NAME": "com.maorongexam.app"
+        },
+        "cordova-plugin-fileopener": {
+            "PACKAGE_NAME": "com.maorongexam.app"
         }
     },
     "dependent_plugins": {

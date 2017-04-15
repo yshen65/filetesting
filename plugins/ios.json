@@ -85,6 +85,9 @@
         },
         "com.wmjalak.cordova.fileopener": {
             "PACKAGE_NAME": "tw.why3s.medmission.cloud"
+        },
+        "cordova-plugin-fileopener": {
+            "PACKAGE_NAME": "tw.why3s.medmission.cloud"
         }
     },
     "dependent_plugins": {
