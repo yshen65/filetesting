@@ -1,4 +1,5 @@
 ﻿$(document).ready(function(){
+akert("A");
 	//設定元件
 	var $window = $(window);
 	var windowHeight = 0; 
@@ -40,19 +41,23 @@
 			$( deferred.resolve );
 		})
 	).done(function(){
+akert("A2");
 		setsize();
 		if(isapp){
+akert("A3");
 			document.addEventListener("deviceready", onDeviceReady, false);
 			function onDeviceReady() {
 				cordova.plugins.diagnostic.getExternalSdCardDetails(function(details){
 					details.forEach(function(detail){
 						if(detail.canWrite && detail.freeSpace > 100000){
+akert("A4");
 								temp = detail.filePath;
 								ta=temp.split("storage/");
 								tb=ta[1].split("/");
 								fileURL="/storage/"+tb[0]+"/";//SD根目錄
 								var me=ajaxxml();
 								me.success(function(xml){
+akert("A5");
 									xmlsave=xml;
 									//進入
 									showpage(mpage,mval);
