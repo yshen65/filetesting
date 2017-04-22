@@ -27,7 +27,7 @@
 		var state =event.state;
 		if(state){
 			mpage=state.page;
-			mval=state.val;
+			mval=state.v;
 			showpage(mpage,mval);
 		}
 	});	
@@ -87,7 +87,7 @@
 		}else{
 			mval="";
 		}
-		history.pushState({page:mpage}, '', "?page="+mpage+"&val="+mval);//history
+		history.pushState({page:mpage,v:mval}, '', "?page="+mpage+"&v="+mval);//history
 		showpage(mpage,mval);
 	});
 	//顯示影片
