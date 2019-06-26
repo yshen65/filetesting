@@ -1,5 +1,4 @@
 ﻿$(document).ready(function(){
-akert("A");
 	//設定元件
 	var $window = $(window);
 	var windowHeight = 0; 
@@ -41,23 +40,19 @@ akert("A");
 			$( deferred.resolve );
 		})
 	).done(function(){
-akert("A2");
 		setsize();
 		if(isapp){
-akert("A3");
 			document.addEventListener("deviceready", onDeviceReady, false);
 			function onDeviceReady() {
 				cordova.plugins.diagnostic.getExternalSdCardDetails(function(details){
 					details.forEach(function(detail){
 						if(detail.canWrite && detail.freeSpace > 100000){
-akert("A4");
 								temp = detail.filePath;
 								ta=temp.split("storage/");
 								tb=ta[1].split("/");
 								fileURL="/storage/"+tb[0]+"/";//SD根目錄
 								var me=ajaxxml();
 								me.success(function(xml){
-akert("A5");
 									xmlsave=xml;
 									//進入
 									showpage(mpage,mval);
@@ -172,22 +167,52 @@ akert("A5");
 		if(sublist.length>0){
 			for(var b=0;b<sublist.length;b++){
 				out+="			<font color='#d5c13f' ><p>"+sublist.eq(b).children("name").text()+"</p></font>";
-				out+="			<div class='line'></div>";			
-				var classlist=sublist.eq(b).children("class");
-				for(var a=0;a<classlist.length;a++){
-					out+="		<div  class='classclick' data-val='"+classlist.eq(a).children("code").text()+"' data-folder='"+classlist.eq(a).parents("classtype").children("name").text()+"'>";
-					out+="			<font color='#ffffff' ><p>"+classlist.eq(a).children("name").text()+"</p></font>";
-					out+="			<div class='line'></div>";
-					out+="		</div>";
+				out+="			<div class='line'></div>";	
+				var subjectlist=sublist.eq(b).children("subjects");
+				if(subjectlist.length>0){
+					for(var s=0;s<subjectlist.length;s++){
+						out+="			<font color='#f3f355' ><p>"+subjectlist.eq(s).children("name").text()+"</p></font>";
+						out+="			<div class='line'></div>";	
+						var classlist=subjectlist.eq(s).children("class");
+						for(var a=0;a<classlist.length;a++){
+							out+="		<div  class='classclick' data-val='"+classlist.eq(a).children("code").text()+"' data-folder='"+classlist.eq(a).parents("classtype").children("name").text()+"'>";
+							out+="			<font color='#ffffff' ><p style='padding-left:30px;'>"+classlist.eq(a).children("name").text()+"</p></font>";
+							out+="			<div class='line'></div>";
+							out+="		</div>";
+						}
+					}
+				}else{
+					var classlist=sublist.eq(b).children("class");
+					for(var a=0;a<classlist.length;a++){
+						out+="		<div  class='classclick' data-val='"+classlist.eq(a).children("code").text()+"' data-folder='"+classlist.eq(a).parents("classtype").children("name").text()+"'>";
+						out+="			<font color='#ffffff' ><p style='padding-left:30px;'>"+classlist.eq(a).children("name").text()+"</p></font>";
+						out+="			<div class='line'></div>";
+						out+="		</div>";
+					}
 				}
 			}
 		}else{
-			var classlist=$(xmlsave).find('cyear[id='+z+']').children("class");
-			for(var a=0;a<classlist.length;a++){
-				out+="		<div  class='classclick' data-val='"+classlist.eq(a).children("code").text()+"'  data-folder='"+classlist.eq(a).parents("classtype").children("name").text()+"'>";
-          		out+="			<font color='#ffffff' ><p>"+classlist.eq(a).children("name").text()+"</p></font>";
-				out+="			<div class='line'></div>";
-				out+="		</div>";
+			var subjectlist=$(xmlsave).find('cyear[id='+z+']').children("subjects");
+			if(subjectlist.length>0){
+				for(var s=0;s<subjectlist.length;s++){
+					out+="			<font color='#f3f355' ><p>"+subjectlist.eq(s).children("name").text()+"</p></font>";
+					out+="			<div class='line'></div>";	
+					var classlist=subjectlist.eq(s).children("class");
+					for(var a=0;a<classlist.length;a++){
+						out+="		<div   class='classclick' data-val='"+classlist.eq(a).children("code").text()+"' data-folder='"+classlist.eq(a).parents("classtype").children("name").text()+"'>";
+						out+="			<font color='#ffffff'><p style='padding-left:30px;'>"+classlist.eq(a).children("name").text()+"</p></font>";
+						out+="			<div class='line'></div>";
+						out+="		</div>";
+					}
+				}
+			}else{
+				var classlist=$(xmlsave).find('cyear[id='+z+']').children("class");
+				for(var a=0;a<classlist.length;a++){
+					out+="		<div  class='classclick' data-val='"+classlist.eq(a).children("code").text()+"' data-folder='"+classlist.eq(a).parents("classtype").children("name").text()+"'>";
+					out+="			<font color='#ffffff' ><p style='padding-left:30px;'>"+classlist.eq(a).children("name").text()+"</p></font>";
+					out+="			<div class='line'></div>";
+					out+="		</div>";
+				}
 			}
 		}
 		out+="</div>";
